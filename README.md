@@ -42,7 +42,7 @@ Sou estudante de Engenharia Biomédica na Universidade Federal de Uberlândia (U
   alt="GitHub Stats" 
   height="200" 
   style='padding-right: 10px;'
-  src="https://github-readme-stats.vercel.app/api?username=ivan-josef&show_icons=true&theme=tokyonight&locale=pt-br&include_all_commits=true" />
+  src="https://github-readme-stats.vercel.app/api?username=ivan-josef&show_icons=true&theme=tokyonight&locale=pt-br&commits_year=2026" />
 
   <img 
   align = 'left'
