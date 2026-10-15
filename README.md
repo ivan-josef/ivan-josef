@@ -36,18 +36,17 @@ Sou estudante de Engenharia Biomédica na Universidade Federal de Uberlândia (U
 
 ### 📊 Estatísticas do GitHub
 
-<p>
+<p align="center">
   <img
-  alt="Estatísticas do GitHub"
-  height="200"
-  src="./profile/stats.svg"
+    src="./profile/stats.svg"
+    alt="Estatísticas do GitHub"
+    width="58%"
+    align="top"
   />
-
-  <img 
-  align = 'left'
-  alt="GitHub Tec" 
-  height="200" 
-  style='padding-right: 10px;'
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=ivan-josef&layout=compact&langs_count=8&theme=tokyonight&custom_title=Tecnologias" />
-
+  <img
+    src="./profile/top-langs.svg"
+    alt="Linguagens mais usadas"
+    width="38%"
+    align="top"
+  />
 </p>
