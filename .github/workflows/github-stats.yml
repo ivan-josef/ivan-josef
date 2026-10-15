@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Baixar o repositorio do perfil
         uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Gerar o cartao de estatisticas
         uses: stats-organization/github-readme-stats-action@v2
@@ -48,4 +51,5 @@ jobs:
             exit 0
           fi
           git commit -m "Atualizar estatisticas do GitHub"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
