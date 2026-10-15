@@ -1,0 +1,42 @@
+name: Atualizar estatisticas do GitHub
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-profile-stats
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Baixar o repositorio do perfil
+        uses: actions/checkout@v6
+
+      - name: Gerar o cartao de estatisticas
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=ivan-josef&show_icons=true&theme=tokyonight&locale=pt-br
+          path: profile/stats.svg
+          token: ${{ secrets.STATS_TOKEN }}
+          fail_on_error: true
+
+      - name: Salvar o cartao no repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/stats.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Atualizar estatisticas do GitHub"
+          git push
